@@ -120,7 +120,7 @@ const LoginModal = () => {
         isOpen={loginModal.isOpen}
         title="Login"
         actionLabel="Continue"
-        onClose={registerModal.onClose}
+        onClose={loginModal.onClose}
         onSubmit={handleSubmit(onSubmit)}
         body={bodyContent}
         footer={footerContent}
