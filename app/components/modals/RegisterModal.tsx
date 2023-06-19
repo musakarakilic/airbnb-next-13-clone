@@ -6,8 +6,10 @@ import { FcGoogle } from "react-icons/fc"
 import { useCallback, useState } from "react"
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
 
-import useRegisterModal from "@/app/hooks/useRegisterModal"
 import Modal from "./Modal"
+import useRegisterModal from "@/app/hooks/useRegisterModal"
+import useLoginModal from "@/app/hooks/useLoginModal"
+
 import Heading from "../Heading"
 import Input from "../inputs/Input"
 import { toast } from "react-hot-toast"
@@ -16,6 +18,7 @@ import { signIn } from "next-auth/react"
 
 const RegisterModal = () => {
     const registerModal = useRegisterModal()
+    const loginModal = useLoginModal()
     const [isLoading, setIsLoading] = useState(false)
 
     const {
@@ -39,13 +42,21 @@ const RegisterModal = () => {
         .then(() => {
             registerModal.onClose()
         })
-        .catch((error) => {
+        .catch(() => {
             toast.error('Something gone wrong')
         })
         .finally(() =>{
             setIsLoading(false)
         })
     }
+    const onToggle = useCallback(() => {
+        if (isLoading) {
+          return;
+        }
+      
+        registerModal.onClose();
+        loginModal.onOpen();
+      }, [loginModal, registerModal, isLoading]);
 
     const bodyContent = (
         <div className="flex flex-col gap-4">
@@ -102,7 +113,7 @@ const RegisterModal = () => {
                     Already have an account?
                     </div>
                     <div
-                    onClick={registerModal.onClose}
+                    onClick={onToggle}
                     className="text-neutral-800 cursor-pointer hover:underline">
                     Login
                     </div>

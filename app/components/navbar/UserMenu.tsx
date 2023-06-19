@@ -90,7 +90,6 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                     </>
                     )}
                 </div>
-
             </div>
         )}
     </div>
