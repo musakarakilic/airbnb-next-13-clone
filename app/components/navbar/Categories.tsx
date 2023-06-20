@@ -1,8 +1,12 @@
+'use client'
 
 import Container from "../Container"
 
+import { IoDiamond } from 'react-icons/io5'
+import { BsSnow } from 'react-icons/bs'
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb'
-import { GiIsland, GiWindmill } from 'react-icons/gi'
+import { GiBarn, GiBoatFishing, GiCastle, GiCaveEntrance, GiDesert, GiForestCamp, GiIsland, GiWindmill } from 'react-icons/gi'
+import { FaSkiing } from 'react-icons/fa'
 import { MdOutlineVilla } from 'react-icons/md'
 import CategoryBox from "../CategoryBox"
 import { usePathname, useSearchParams } from "next/navigation"
@@ -37,6 +41,51 @@ export const categories = [
         label: 'Islands',
         icon: GiIsland,
         description: 'This property is in island!'
+    },
+    {
+        label: 'Lake',
+        icon: GiBoatFishing,
+        description: 'This property is close to a lake!'
+    },
+    {
+        label: 'Skiing',
+        icon: FaSkiing,
+        description: 'This property has a skiing activities'
+    },
+    {
+        label: 'Castles',
+        icon: GiCastle,
+        description: 'This property is in the castle'
+    },
+    {
+        label: 'Camping',
+        icon: GiForestCamp,
+        description: 'This property has camping activities'
+    },
+    {
+        label: 'Arctic',
+        icon: BsSnow,
+        description: 'This property has Arctic activities'
+    },
+    {
+        label: 'Cave',
+        icon: GiCaveEntrance,
+        description: 'This property has cave activities'
+    },
+    {
+        label: 'Desert',
+        icon: GiDesert,
+        description: 'This property has Desert activities'
+    },
+    {
+        label: 'Barns',
+        icon: GiBarn,
+        description: 'This property has Barn activities'
+    },
+    {
+        label: 'Lux',
+        icon: IoDiamond,
+        description: 'This property has Lux activities'
     },
 ]
 
